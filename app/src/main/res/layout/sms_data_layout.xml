@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/llFloatingWinContent"
+    android:layout_width="match_parent"
+    android:descendantFocusability="beforeDescendants"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible"
+        android:background="#c873e7dd"
+        android:id="@+id/llFloatWinWrapper">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/llSmsHeader"
+            android:background="#4240803a"
+            android:layout_marginBottom="0dp"
+            android:padding="10dp"
+            android:gravity="center_horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SMS From: "
+                android:layout_weight="40"
+                android:textSize="16dp"
+                android:textColor="#000000"
+                android:gravity="center_horizontal"
+                android:layout_marginRight="10dp"
+                android:id="@+id/txtSmsReceivedText" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="16dp"
+                android:layout_weight="60"
+                android:gravity="center_horizontal"
+                android:textColor="#000000"
+                android:id="@+id/txtSmsReceivedFrom"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/llSmsContent"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text= "Hi sms ajdldj sjlfklsf sfk;lkfs sfkfsl bjhkfjs lklsf lkfs"
+                android:id="@+id/txtSmsText"
+                android:textSize="16dp"
+                android:singleLine="false"
+                android:padding="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_centerHorizontal="true"
+                android:textColor="#1b1717" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/llSmsFooter"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Close"
+                android:layout_weight="30"
+                android:textColor="#ffffff"
+                android:drawableRight="@drawable/close"
+                android:paddingRight="5dp"
+                android:id="@+id/btnStopFloatingWindow"
+                android:background="#ef684d"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Share"
+                android:layout_weight="30"
+                android:id="@+id/btnShareOTP"
+                android:textColor="#ffffff"
+                android:paddingRight="5dp"
+                android:drawableRight="@drawable/share"
+                android:background="#33ea0e"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Copy"
+                android:layout_weight="40"
+                android:id="@+id/btnCopyOTP"
+                android:textColor="#ffffff"
+                android:paddingRight="5dp"
+                android:drawableRight="@drawable/contentcopy"
+                android:background="#445ce7"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

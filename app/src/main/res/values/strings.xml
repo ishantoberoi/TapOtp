@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">OTPReader</string>
+
+    <string name="headerTextSalientfeatures">Window with message is displayed on receipt of SMS!</string>
+    <string name="contentSalientFeatures">You can Copy, Share the code, or directly move to app and type in.</string>
+
+    <string name="headerTextMovableAlwaysOn">Window with message is always on the screen!</string>
+    <string name="contentMovableAlwaysOn">Message window does not interfere with any app.
+        You can move it around the screen as per your convenience</string>
+
+    <string name="headerTextCopyToClip">Just click on copy, and code is copied to Cipboard!</string>
+    <string name="contentCopyToClip">A small toast confirms that the code is copied to Clipboard.
+    You can long press the deisred box and see a "Paste" option. Hit the "Paste" option to get your code pasted in there.</string>
+
+    <string name="headerTextShareTheCode">Share the code with anyone in need!</string>
+    <string name="contentShareTheCode">Just click on Share, and choose from Whatsapp, Gmail, Messaging etc services to
+    directly share the code with your friend.</string>
+
+    <string name="swipeForNextMovable">Thank you.</string>
+    <string name="howappworks">TapOTP simply, scans your incoming sms, to find for keywords like otp, pin
+    code etc and then a sequence of digits to extract as otp/code. We do not store any user information.
+    </string>
+
+    <string name="permissionreq">TapOTP requires the permission to read your incoming SMS.
+        For Android Marshmallow and above, the app requires the permission to draw an overlay on the screen.
+    If, you choose you share the code using Whatsapp, Gmail etc then you may need an internet connection depending on the service
+    you choose.</string>
+
+</resources>
