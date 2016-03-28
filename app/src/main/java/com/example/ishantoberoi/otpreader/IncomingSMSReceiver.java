@@ -37,7 +37,7 @@ public class IncomingSMSReceiver extends BroadcastReceiver {
                     Log.i("SMSReceiver", "SenderN0: " + phoneNumber + " Body: " + msgBody);
 
                     // Matching for specific words in sms to trigger Floating window
-                    String patternString = "(OTP)|(KEY)|(PIN)|(PASSCODE)|(CODE)";
+                    String patternString = "(OTP)|(KEY)|(PIN)|(PASSCODE)|(CODE)|(One Time Password)";
                     Pattern pattern = Pattern.compile(patternString, Pattern.CASE_INSENSITIVE);
                     Matcher matcher = pattern.matcher(msgBody);
                     if(matcher.find()) {
@@ -46,7 +46,7 @@ public class IncomingSMSReceiver extends BroadcastReceiver {
                         } else if(msgBody.matches("(?i:.*\\d{4,8}\\sis.*)")) {
                             patternString = "(\\d{4,8})\\sis";
                         } else {
-                            patternString = "is\\s(\\d{4,8})|\\s(\\d{4,8})\\s|\\s(\\d{4,8})\\s|^(\\d{4,8})\\s|\\s(\\d{4,8})\\.|-(\\d{4,8})";
+                            patternString = "is\\s(\\d{4,8})|\\s(\\d{4,8})\\s|\\s(\\d{4,8})\\s|^(\\d{4,8})\\s|\\s(\\d{4,8})\\.?|-(\\d{4,8})|:(\\d{4,8})";
                         }
                         pattern = Pattern.compile(patternString, Pattern.CASE_INSENSITIVE);
                         matcher = pattern.matcher(msgBody);
@@ -69,43 +69,6 @@ public class IncomingSMSReceiver extends BroadcastReceiver {
                         return;
                     }
 
-
-
-
-
-
-
-                    if(matcher.find()) {
-                        if(msgBody.matches(".*is\\s\\d{4,8}.*")) {
-                            patternString = ".*is\\s(\\d{4,8}).*";
-                            pattern = Pattern.compile(patternString, Pattern.CASE_INSENSITIVE);
-                        } else if(msgBody.matches(".*\\d{4,8}\\sis.*")) {
-                            patternString = ".*(\\d{4,8})\\sis.*";
-                            pattern = Pattern.compile(patternString, Pattern.CASE_INSENSITIVE);
-                        } else {
-                            patternString = "is\\s(\\d{4,8})|\\s(\\d{4,8})\\s|\\s(\\d{4,8})\\s|^(\\d{4,8})\\s|\\s(\\d{4,8})\\.|-(\\d{4,8})";
-                            pattern = Pattern.compile(patternString, Pattern.CASE_INSENSITIVE);
-                        }
-                        matcher = pattern.matcher(msgBody);
-                        if(matcher.find()) {
-                            System.out.println("output:"+matcher.group(0));
-                            Log.i("OTP: ", matcher.group(0));
-                            Intent startFloatingActivityIntent = new Intent(context, FloatingWindow.class);
-                            Bundle smsContent = new Bundle();
-                            smsContent.putString(FROM, phoneNumber);
-                            smsContent.putString(MESSAGE, msgBody);
-                            String otpExtracted = (matcher.group(0)).trim().replaceAll("[.-a-z\\s]","");
-                            smsContent.putString(OTP, otpExtracted);
-                            startFloatingActivityIntent.putExtras(smsContent);
-                            context.startService(startFloatingActivityIntent);
-                        } else {
-                            Log.i("KeyFound", "No number in 4-8 digits found");
-                            return;
-                        }
-                    } else {
-                        Log.i("NoKeyFound", "No matching key found");
-                        return;
-                    }
             }
         }
 

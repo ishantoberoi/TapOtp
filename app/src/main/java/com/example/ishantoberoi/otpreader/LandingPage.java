@@ -58,6 +58,10 @@ public class LandingPage extends AppCompatActivity implements View.OnClickListen
 
 
     private void checkForSmsPermissions() {
+        int bootCompletedPermission = ContextCompat.checkSelfPermission(this, Manifest.permission.RECEIVE_BOOT_COMPLETED);
+        if(bootCompletedPermission != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.RECEIVE_BOOT_COMPLETED}, BOOT_COMPLETED_PERMISSIONS);
+        }
         int smsPermissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_SMS);
         if(smsPermissionCheck != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this,
@@ -71,6 +75,12 @@ public class LandingPage extends AppCompatActivity implements View.OnClickListen
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         switch (requestCode) {
+            case BOOT_COMPLETED_PERMISSIONS:
+                if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                } else {
+                    Toast.makeText(LandingPage.this, "You may need to restart the app once manually on phone reboot", Toast.LENGTH_LONG).show();
+                }
             case SMS_PERMISSIONS:
                 if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     if(Build.VERSION.SDK_INT >= 23) {
