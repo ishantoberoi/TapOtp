@@ -5,8 +5,7 @@
     android:id="@+id/llFloatingWinContent"
     android:layout_width="match_parent"
     android:descendantFocusability="beforeDescendants"
-    android:layout_height="wrap_content"
-    android:layout_margin="10dp">
+    android:layout_height="wrap_content">
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
@@ -27,7 +26,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:id="@+id/llSmsHeader"
-                android:background="#41A5E0"
                 android:padding="10dp"
                 android:gravity="center_horizontal">
 
@@ -63,9 +61,7 @@
                 android:id="@+id/llSmsContent"
                 android:background="#FFFFFF"
                 android:gravity="center_horizontal"
-                android:paddingBottom="5dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp">
+                android:paddingBottom="5dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -75,8 +71,6 @@
                     android:textSize="13sp"
                     android:singleLine="false"
                     android:padding="5dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
                     android:layout_centerHorizontal="true"
                     android:textColor="#212121" />
 
@@ -95,21 +89,17 @@
                 android:orientation="horizontal"
                 android:id="@+id/llSmsFooter"
                 android:gravity="center_horizontal"
-                android:background="#FFFFFF"
-                android:layout_marginLeft="2dp"
-                android:layout_marginBottom="2dp"
-                android:layout_marginRight="2dp">
+                android:background="#FFFFFF">
 
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Close"
-                    android:textAllCaps="true"
                     android:layout_weight="1"
                     android:textColor="#212121"
                     android:drawableLeft="@drawable/cross"
                     android:drawableStart="@drawable/cross"
-                    android:paddingLeft="20dp"
+                    android:paddingLeft="10dp"
                     android:minHeight="0dp"
                     android:paddingTop="10dp"
                     android:paddingBottom="10dp"
@@ -132,7 +122,7 @@
                     android:layout_weight="1"
                     android:id="@+id/btnShareOTP"
                     android:textColor="#212121"
-                    android:paddingLeft="20dp"
+                    android:paddingLeft="15dp"
                     android:gravity="start|center"
                     android:drawablePadding="10dp"
                     android:minHeight="0dp"
@@ -155,9 +145,10 @@
                     android:layout_weight="1"
                     android:id="@+id/btnCopyOTP"
                     android:textColor="#212121"
-                    android:paddingLeft="20dp"
+                    android:paddingLeft="15dp"
                     android:paddingTop="10dp"
-                    android:paddingBottom="10dp"                    android:minHeight="0dp"
+                    android:paddingBottom="10dp"
+                    android:minHeight="0dp"
                     android:gravity="start|center"
                     android:drawablePadding="10dp"
                     android:drawableStart="@drawable/contentcopy"
@@ -165,7 +156,6 @@
                     android:background="@null"/>
 
             </LinearLayout>
-
         </LinearLayout>
     </android.support.v7.widget.CardView>
 </LinearLayout>
