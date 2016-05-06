@@ -1,120 +1,171 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:id="@+id/llFloatingWinContent"
     android:layout_width="match_parent"
     android:descendantFocusability="beforeDescendants"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp">
 
-    <LinearLayout
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:visibility="visible"
-        android:background="#c873e7dd"
-        android:id="@+id/llFloatWinWrapper">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:id="@+id/llSmsHeader"
-            android:background="#4240803a"
-            android:layout_marginBottom="0dp"
-            android:padding="10dp"
-            android:gravity="center_horizontal">
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="SMS From: "
-                android:layout_weight="40"
-                android:textSize="16dp"
-                android:textColor="#000000"
-                android:gravity="center_horizontal"
-                android:layout_marginRight="10dp"
-                android:id="@+id/txtSmsReceivedText" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textSize="16dp"
-                android:layout_weight="60"
-                android:gravity="center_horizontal"
-                android:textColor="#000000"
-                android:id="@+id/txtSmsReceivedFrom"/>
-
-
-        </LinearLayout>
+        app:cardCornerRadius="4dp"
+        app:cardElevation="5dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:id="@+id/llSmsContent"
-            android:gravity="center_horizontal">
+            android:visibility="visible"
+            android:background="#41A5E0"
+            android:id="@+id/llFloatWinWrapper">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text= "Hi sms ajdldj sjlfklsf sfk;lkfs sfkfsl bjhkfjs lklsf lkfs"
-                android:id="@+id/txtSmsText"
-                android:textSize="16dp"
-                android:singleLine="false"
-                android:padding="5dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_centerHorizontal="true"
-                android:textColor="#1b1717" />
+                android:orientation="horizontal"
+                android:id="@+id/llSmsHeader"
+                android:background="#41A5E0"
+                android:padding="10dp"
+                android:gravity="center_horizontal">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SMS From: "
+                    android:layout_weight="1"
+                    android:textSize="16dp"
+                    android:textColor="#FFFFFF"
+                    android:gravity="center_horizontal|end"
+                    android:layout_marginRight="10dp"
+                    android:id="@+id/txtSmsReceivedText" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="7829953236"
+                    android:textSize="16dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|start"
+                    android:textColor="#FFFFFF"
+                    android:id="@+id/txtSmsReceivedFrom"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/llSmsContent"
+                android:background="#FFFFFF"
+                android:gravity="center_horizontal"
+                android:paddingBottom="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text= "Hi sms ajdldj sjlfklsf sfk;lkfs sfkfsl bjhkfjs lklsf lkfs"
+                    android:id="@+id/txtSmsText"
+                    android:textSize="13sp"
+                    android:singleLine="false"
+                    android:padding="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="#212121" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#F0F0F0"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/llSmsFooter"
+                android:gravity="center_horizontal"
+                android:background="#FFFFFF"
+                android:layout_marginLeft="2dp"
+                android:layout_marginBottom="2dp"
+                android:layout_marginRight="2dp">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Close"
+                    android:textAllCaps="true"
+                    android:layout_weight="1"
+                    android:textColor="#212121"
+                    android:drawableLeft="@drawable/cross"
+                    android:drawableStart="@drawable/cross"
+                    android:paddingLeft="20dp"
+                    android:minHeight="0dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:gravity="start|center"
+                    android:drawablePadding="10dp"
+                    android:id="@+id/btnStopFloatingWindow"
+                    android:background="@null"/>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#F0F0F0"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Share"
+                    android:layout_weight="1"
+                    android:id="@+id/btnShareOTP"
+                    android:textColor="#212121"
+                    android:paddingLeft="20dp"
+                    android:gravity="start|center"
+                    android:drawablePadding="10dp"
+                    android:minHeight="0dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"                    android:drawableStart="@drawable/share"
+                    android:drawableLeft="@drawable/share"
+                    android:background="@null"/>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#F0F0F0"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Copy"
+                    android:layout_weight="1"
+                    android:id="@+id/btnCopyOTP"
+                    android:textColor="#212121"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"                    android:minHeight="0dp"
+                    android:gravity="start|center"
+                    android:drawablePadding="10dp"
+                    android:drawableStart="@drawable/contentcopy"
+                    android:drawableLeft="@drawable/contentcopy"
+                    android:background="@null"/>
+
+            </LinearLayout>
 
         </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:id="@+id/llSmsFooter"
-            android:layout_marginTop="10dp"
-            android:gravity="center_horizontal">
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Close"
-                android:layout_weight="30"
-                android:textColor="#ffffff"
-                android:drawableRight="@drawable/close"
-                android:paddingRight="5dp"
-                android:id="@+id/btnStopFloatingWindow"
-                android:background="#ef684d"/>
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Share"
-                android:layout_weight="30"
-                android:id="@+id/btnShareOTP"
-                android:textColor="#ffffff"
-                android:paddingRight="5dp"
-                android:drawableRight="@drawable/share"
-                android:background="#33ea0e"/>
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Copy"
-                android:layout_weight="40"
-                android:id="@+id/btnCopyOTP"
-                android:textColor="#ffffff"
-                android:paddingRight="5dp"
-                android:drawableRight="@drawable/contentcopy"
-                android:background="#445ce7"/>
-
-        </LinearLayout>
-
-    </LinearLayout>
-
+    </android.support.v7.widget.CardView>
 </LinearLayout>

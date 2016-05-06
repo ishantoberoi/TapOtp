@@ -78,7 +78,7 @@ public class FloatingWindow extends Service implements View.OnClickListener {
         }
         windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
         DisplayMetrics displayMetrics = this.getResources().getDisplayMetrics();
-        final WindowManager.LayoutParams windowParams = new WindowManager.LayoutParams(displayMetrics.widthPixels, displayMetrics.heightPixels/3, WindowManager.LayoutParams.TYPE_SYSTEM_ALERT, WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE, PixelFormat.TRANSLUCENT);
+        final WindowManager.LayoutParams windowParams = new WindowManager.LayoutParams(displayMetrics.widthPixels - 20, displayMetrics.heightPixels/3, WindowManager.LayoutParams.TYPE_SYSTEM_ALERT, WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE, PixelFormat.TRANSLUCENT);
         windowParams.x = 0;
         windowParams.y = 0;
         windowParams.gravity = Gravity.CENTER;
